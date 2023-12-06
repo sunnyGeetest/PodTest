@@ -20,13 +20,13 @@ Pod::Spec.new do |s|
   s.weak_frameworks = 'Network'
 
   # 移动模拟器暂时只给了 x86_64 目标, 需要排除 arm64
-  s.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386，arm64', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'armv7' }
+  s.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'armv7' }
 
 
   s.libraries = 'c++.1', 'z.1.2.8'
 
   s.subspec 'Main' do |dm|
-    dm.vendored_frameworks = 'SDK/OneLoginSDK.xcframework','SDK/OAuth.xcframework','SDK/account_login_sdk_noui_core.xcframework', 'SDK/TYRZUISDK.xcframework'
+    dm.vendored_frameworks = 'SDK/OneLoginSDK.xcframework','SDK/EAccountApiSDK.xcframework','SDK/OAuth.xcframework','SDK/account_login_sdk_noui_core.xcframework', 'SDK/TYRZUISDK.xcframework'
     dm.resources = 'SDK/OneLoginResource.bundle'
   end
 
